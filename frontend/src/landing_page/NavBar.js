@@ -1,0 +1,90 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { useUser, useClerk, UserButton } from "@clerk/clerk-react";
+
+function NavBar() {
+  const { user } = useUser();
+  const { openSignIn } = useClerk();
+  return (
+    <nav
+      class="navbar navbar-expand-lg border bottom"
+      style={{ backgroundColor: "#FFF" }}
+    >
+      <div class="container p-2">
+        <Link class="navbar-brand" to="/">
+          <img
+            src="media\images\logoReal.png"
+            alt="logo"
+            style={{ width: "20%" }}
+          />
+        </Link>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="d-flex" role="search">
+            <ul class="navbar-nav mb-lg-0">
+              <li class="nav-item d-flex justify-content-center w-100">
+                {user ? (
+                  <img
+                    src="media/images/logo (1).png"
+                    alt="logo" //Dashboard
+                    style={{ width: "30%", cursor: "pointer" }}
+                    onClick={() =>
+                      window.open("http://localhost:3001/", "_blank")
+                    }
+                  />
+                ) : (
+                  <button
+                  type="button"
+                    onClick={openSignIn}
+                    className="btn btn-primary mt-3"
+                    style={{ width: "320px", height: "44px" }}
+                  >
+                    LogIn now
+                  </button>
+                )}
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link active" aria-current="page" to="/signup">
+                  Signup
+                </Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link active" to="/about">
+                  About
+                </Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link active" to="/product">
+                  Product
+                </Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link active" to="/pricing">
+                  Pricing
+                </Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link active" to="/support">
+                  Support
+                </Link>
+              </li>
+              <li style={{marginLeft:"20px", marginTop:"5px"}}>{user ? <UserButton></UserButton> : ""}</li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+export default NavBar;
