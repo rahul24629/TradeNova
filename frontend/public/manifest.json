@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "TradeNova",
+  "name": "TradeNova- A stock trading platform",
   "icons": [
     {
       "src": "favicon.ico",
