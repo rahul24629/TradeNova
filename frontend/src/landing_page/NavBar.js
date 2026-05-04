@@ -39,7 +39,7 @@ function NavBar() {
                     alt="logo" //Dashboard
                     style={{ width: "30%", cursor: "pointer" }}
                     onClick={() =>
-                      window.open("http://localhost:3001/", "_blank")
+                      window.open("hhttps://trade-nova-yjpu.vercel.app/", "_blank")
                     }
                   />
                 ) : (
