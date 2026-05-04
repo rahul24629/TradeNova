@@ -22,7 +22,7 @@ const app = express();
 
 // ✅ CORS fix
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001","https://tradenova-gv0u.onrender.com/"],
+  origin: ["https://trade-nova-2m84.vercel.app/","https://trade-nova-yjpu.vercel.app/"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"], // ✅ add করা হয়েছে
