@@ -16,7 +16,7 @@ const BuyActionWindow = ({ uid }) => {
 
   const handleBuyClick = async () => {
     const token = await getToken(); 
-  await axios.post("http://localhost:3002/newOrder", 
+  await axios.post("https://tradenova-gv0u.onrender.com/newOrder", 
       {
         name: uid,
         qty: stockQuantity,

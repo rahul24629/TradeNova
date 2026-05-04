@@ -15,7 +15,7 @@ const SellActionWindow = ({ uid }) => {
   try {
     const token = await getToken();
 
-    await axios.post("http://localhost:3002/sellOrder",
+    await axios.post("https://tradenova-gv0u.onrender.com/sellOrder",
       {
         name: uid,
         qty: Number(stockQuantity),

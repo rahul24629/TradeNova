@@ -11,7 +11,7 @@ const Orders = () => {
       const token = await getToken(); // ✅ token নাও
       console.log("TOKEN:", token);
 
-      const res = await axios.get("http://localhost:3002/allOrders", {
+      const res = await axios.get("https://tradenova-gv0u.onrender.com/allOrders", {
         headers: {
           Authorization: `Bearer ${token}` // ✅ header পাঠাও
         }
